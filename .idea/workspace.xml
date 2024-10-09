@@ -1,26 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="cb49adb5-1c40-43d8-bb5c-205370cd07f1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/djangoProject.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoProject/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoProject/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoProject/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoProject/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoProject/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/playground/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phoneproject/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phoneproject/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phoneproject/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phoneproject/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phoneproject/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phoneproject/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phoneproject/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phoneproject/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/templates/storehome.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$" beforeDir="false" afterPath="$PROJECT_DIR$" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/djangoProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangoProject/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/djangoProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangoProject/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -48,21 +69,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Django Server.djangoProject.executor": "Run",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Django Server.djangoProject.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\skills\Django-framework\djangoProject\store\templates" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="djangoProject" type="Python.DjangoServer" factoryName="Django server">
       <module name="djangoProject" />
@@ -109,6 +136,12 @@
       <updated>1726168039422</updated>
       <workItem from="1726168043820" duration="265000" />
       <workItem from="1726168319227" duration="328000" />
+      <workItem from="1726198888378" duration="910000" />
+      <workItem from="1727855324211" duration="130000" />
+      <workItem from="1727857974162" duration="5490000" />
+      <workItem from="1728234788974" duration="6000" />
+      <workItem from="1728295212359" duration="8000" />
+      <workItem from="1728411960408" duration="205000" />
     </task>
     <servers />
   </component>

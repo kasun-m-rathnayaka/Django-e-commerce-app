@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'playground.apps.PlaygroundConfig',
+    "store.apps.StoreConfig",
+    "phoneproject.apps.PhoneprojectConfig"
 ]
 
 MIDDLEWARE = [
