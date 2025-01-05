@@ -2,12 +2,18 @@ import pandas as pd
 from django.shortcuts import render
 from .models import Product, Catrgory, Customer, Order, OrderProduct
 from .forms import UploadFileForm
+from django.shortcuts import get_object_or_404
 
+def storehome(request, category=None):
+    catrgory = Catrgory.objects.get(name=category)
+    products = Product.objects.filter(category=catrgory)
+    print(products)
+    return render(request, 'home.html', {'products': products, 'title': 'All Phones', 'category': category})
 
 def storehome(request):
     products = Product.objects.all()
     print(products)
-    return render(request, 'home.html', {'products': products, 'title': 'All Phones'})
+    return render(request, 'home.html', {'products': products, 'title': 'All Phones', 'category': 'all'})
 
 
 def aboutus(request):
@@ -36,3 +42,8 @@ def uploadFile(request):
     else:
         form = UploadFileForm()
     return render(request, 'aboutUs.html', {'form': form})
+
+
+def product(request,pk):
+    product = Product.objects.get(pk=pk)
+    return render(request, 'product.html', {'product':product})
