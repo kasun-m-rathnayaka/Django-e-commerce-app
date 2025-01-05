@@ -5,7 +5,7 @@ def storehome(request):
     return render(request,'home.html',{})
 
 def aboutus(request):
-    return render(request,'store/aboutus.html',{})
+    return render(request,'aboutUs.html',{})
 
 def contactus(request):
     return render(request,'store/contactus.html',{})
