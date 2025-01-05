@@ -5,7 +5,8 @@ from .forms import UploadFileForm
 
 
 def storehome(request):
-    products = Product.objects.get.all()
+    products = Product.objects.all()
+    print(products)
     return render(request, 'home.html', {'products': products, 'title': 'All Phones'})
 
 
@@ -27,8 +28,11 @@ def uploadFile(request):
         file = request.FILES['file']
         df = pd.read_excel(file)
         for _, row in df.iterrows():
-            customer = Customer.objects.create(f_name=row['f_name'], l_name=row['l_name'], phone=row['phone'],
-                                               email=row['email'], password=row['password'])
+            category = Catrgory.objects.get_or_create(name=row['category_id'])[0]
+            product = Product.objects.create(name=row['name'], price=row['price'], category=category,
+                                             description=row['description'], is_sale=row['is_sale'],
+                                             sale_price=row['sale_price'])
+            product.save()
     else:
         form = UploadFileForm()
     return render(request, 'aboutUs.html', {'form': form})
