@@ -4,8 +4,11 @@ from .models import Product, Catrgory, Customer, Order, OrderProduct
 from .forms import UploadFileForm
 from django.shortcuts import get_object_or_404
 
-def storehome(request, category=None):
+def category(request, category=None):
     catrgory = Catrgory.objects.get(name=category)
+    # remove space from category
+    category = category.replace('%20', ' ')
+    print(category)
     products = Product.objects.filter(category=catrgory)
     print(products)
     return render(request, 'home.html', {'products': products, 'title': 'All Phones', 'category': category})
@@ -22,11 +25,6 @@ def aboutus(request):
 
 def contactus(request):
     return render(request, 'store/contactus.html', {})
-
-
-def reviews(request):
-    return render(request, 'store/reviews.html', {})
-
 
 def uploadFile(request):
     if request.method == 'POST':
