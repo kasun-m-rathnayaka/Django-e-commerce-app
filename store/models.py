@@ -11,6 +11,9 @@ class Catrgory(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name_plural = 'categories'
+
 
 class Product(models.Model):
     name = models.CharField(max_length=100)
@@ -34,9 +37,6 @@ class Customer(models.Model):
 
     def __str__(self):
         return f'{self.f_name} {self.l_name}'
-
-    class Meta:
-        verbose_name_plural = 'categories'
 
 
 class Order(models.Model):
