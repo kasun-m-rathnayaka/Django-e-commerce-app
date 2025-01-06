@@ -18,9 +18,17 @@
             </div>
         {% endfor %}
     {% endif %}
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Add Product</button>
-    </form>
+
+    <div class="d-flex justify-content-center m-5">
+        <div class="card p-4" style="width: 50%;">
+            <form method="POST" class="form-signin">
+                {% csrf_token %}
+                {% csrf_token %}
+                <div class="form-group mb-3">
+                    {{ form.as_p }}
+                </div>
+                <button class="btn btn-md btn-outline-primary btn-block h6" type="submit">Sign in</button>
+            </form>
+        </div>
+    </div>
 {% endblock %}
