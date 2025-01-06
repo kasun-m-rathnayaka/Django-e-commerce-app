@@ -2,7 +2,7 @@
 {% block content %}
     <section class="py-5">
         <section class="py-5">
-            <div class="container px-4 px-lg-5 my-5" >
+            <div class="container px-4 px-lg-5 my-5">
                 <div class="row gx-4 gx-lg-5 align-items-center">
                     <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0"
                                                src="/static/assets/{{ product.image }}" alt="..."/></div>
@@ -19,12 +19,15 @@
                             quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius
                             blanditiis delectus ipsam minima ea iste laborum vero?</p>
                         <div class="d-flex">
-                            <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1"
-                                   style="max-width: 3rem"/>
-                            <button class="btn btn-outline-dark flex-shrink-0" type="button">
-                                <i class="bi-cart-fill me-1"></i>
-                                Add to cart
-                            </button>
+                            <form action="{% url 'add_to_cart' product.id %}" method="POST" class="d-flex">
+                                {% csrf_token %}
+                                <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1"
+                                       style="max-width: 3rem"/>
+                                <button class="btn btn-outline-dark flex-shrink-0" type="submit">
+                                    <i class="bi-cart-fill me-1"></i>
+                                    Add to cart
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>

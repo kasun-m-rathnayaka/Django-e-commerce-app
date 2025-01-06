@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block content %}
+    <!-- Header-->
+    <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">Cart</h1>
+                <p class="lead fw-normal text-white-50 mb-0">At TechHub, we bring you the latest and most innovative
+                    tech accessories to enhance your everyday life. From cutting-edge gadgets to essential peripherals,
+                    we’ve curated a collection designed for tech enthusiasts and professionals alike.</p>
+            </div>
+        </div>
+    </header>
+    <!-- Section-->
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 mt-5">
+            {% if not cart_items %}
+                <div class="text-center">
+                    <h2>Your cart is empty</h2>
+                </div>
+            {% else %}
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Image</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for item in cart_items %}
+                            <tr class="align-middle">
+                                <td><img src='/static/assets/{{ item.product.image }}'
+                                         alt={{ item.product.description }} class="img-thumbnail"
+                                         style="max-width: 100px;"/>
+                                </td>
+                                <td>{{ item.product.name }}</td>
+                                <td>{{ item.product.description }}</td>
+                                <td>{{ item.quantity }}</td>
+                                <td>${{ item.product.sale_price }}</td>
+                                <td>
+                                    <form action="{% url 'remove_from_cart' item.product_id %}" method="POST">
+                                        {% csrf_token %}
+                                        <button class="btn btn-outline-danger w-100" type="submit">Remove from cart</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        <tr>
+                            <td colspan="4"></td>
+                            <td><strong>Total</strong></td>
+                            <td><strong>${{ total_price }}</strong></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5"></td>
+                            <td>
+                                <form action="#" method="POST">
+                                    {% csrf_token %}
+                                    <button class="btn btn-outline-primary w-100" type="submit">Checkout</button>
+                                </form>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            {% endif %}
+        </div>
+    </section>
+{% endblock %}
