@@ -42,3 +42,7 @@ def logout_view(request):
     logout(request)
     messages.success(request, 'Logged out successfully')
     return redirect('storehome')
+
+
+def profile(request):
+    return None

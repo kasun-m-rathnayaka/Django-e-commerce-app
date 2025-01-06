@@ -1,8 +1,9 @@
 import pandas as pd
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Product, Catrgory, Customer, Order, OrderProduct
 from .forms import UploadFileForm
 from django.shortcuts import get_object_or_404
+from user_accounts.models import CartItem
 
 def category(request, category=None):
     catrgory = Catrgory.objects.get(name=category)
@@ -21,10 +22,6 @@ def storehome(request):
 
 def aboutus(request):
     return render(request, 'aboutUs.html', {})
-
-
-def contactus(request):
-    return render(request, 'store/contactus.html', {})
 
 def uploadFile(request):
     if request.method == 'POST':
@@ -45,3 +42,19 @@ def uploadFile(request):
 def product(request,pk):
     product = Product.objects.get(pk=pk)
     return render(request, 'product.html', {'product':product})
+
+
+def add_to_cart(request,product_id):
+    if request.user:
+        product = Product.objects.get(id=product_id)
+        cart_item, created = CartItem.objects.get_or_create(product=product, user=request.user)
+        cart_item.quantity += 1
+        cart_item.save()
+    return redirect('shop')
+
+def shop(request):
+    if request.user.is_anonymous:
+        pass
+    else:
+        cart_items = CartItem.objects.filter(user = request.user)
+        total_price = sum()
