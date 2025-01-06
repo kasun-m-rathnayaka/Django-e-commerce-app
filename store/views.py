@@ -16,7 +16,6 @@ def category(request, category=None):
 
 def storehome(request):
     products = Product.objects.all()
-    print(products)
     return render(request, 'home.html', {'products': products, 'title': 'All Phones', 'category': 'all'})
 
 
@@ -41,7 +40,8 @@ def uploadFile(request):
 
 def product(request,pk):
     product = Product.objects.get(pk=pk)
-    return render(request, 'product.html', {'product':product})
+    products = Product.objects.all()[:4]
+    return render(request, 'product.html', {'product':product, 'related_product':products})
 
 
 def add_to_cart(request,product_id):
