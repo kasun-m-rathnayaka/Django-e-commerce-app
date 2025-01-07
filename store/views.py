@@ -11,7 +11,6 @@ def category(request, category=None):
     category = category.replace('%20', ' ')
     print(category)
     products = Product.objects.filter(category=catrgory)
-    print(products)
     return render(request, 'home.html', {'products': products, 'title': 'All Phones', 'category': category})
 
 def storehome(request):
